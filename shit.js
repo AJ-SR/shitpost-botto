@@ -6,6 +6,13 @@ const fs = require("fs");
 
 client.on("ready", () => {
   console.log("I am ready!");
+  client.user.setGame("shitposts");
+});
+
+function isShitpost() {
+  for (i = 0; i < config.keywords.length; i++) {
+    if (message.content.includes(config.keywords[i])) {
+      message.channel.send("true");
 });
 
 client.on("message", (message) => {
@@ -16,9 +23,7 @@ client.on("message", (message) => {
   } else
   if (message.content.startsWith(config.prefix + "foo")) {
     message.channel.send("bar!");
-  } else
-  if (message.content.includes("AJ-SR")) {
-    message.channel.send("AJ-SR is my dad");
+  }
 });
 
 client.login(config.token);
