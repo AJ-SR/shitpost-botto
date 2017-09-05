@@ -16,7 +16,9 @@ client.on("message", (message) => {
   } else
   if (message.content.startsWith(config.prefix + "foo")) {
     message.channel.send("bar!");
-  }
+  } else
+  if (message.content.includes("AJ-SR")) {
+    message.channel.send("AJ-SR is my dad");
 });
 
 client.login(config.token);
