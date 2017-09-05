@@ -1,0 +1,8 @@
+{
+  "name": "shitpost-botto",
+  "version": "1.0.0",
+  "description": "Shitposting Bot",
+  "main": "shit.js",
+  "author": "AJ-SR",
+  "dependencies": {"discord.js"}
+}
