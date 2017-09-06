@@ -4,6 +4,8 @@ const config = require("./config.json");
 const auth = require("./auth.json");
 const prefix = "-";
 const fs = require("fs");
+const args = message.content.slice(prefix.length).trim().split(/ +/g);
+const command = args.shift().toLowerCase();
 const response = {
 	"shitpost" : "Shitpost. You mean AJ's poetry?",
 	"Desoros" : "Desoros. I like that guy."
@@ -25,10 +27,10 @@ function isShitpost(message) {
 client.on("message", (message) => {
 if (!message.content.startsWith(config.prefix) || message.author.bot) return;
 	
-if (message.content.startsWith(config.prefix + "ping")) {
+if (command === "ping")) {
     	message.channel.send("pong!");
   } else
-if (message.content.startsWith(config.prefix + "foo")) {
+if (command === "foo")) {
 	message.channel.send("bar!");
   }
 }
@@ -37,7 +39,7 @@ if (message.content.startsWith(config.prefix + "foo")) {
 client.on("message", (message) => {
   if (message.author.bot) return;
 	
-  if (isShitpost(message) == true) {
+  if (isShitpost(message) === true) {
   	message.channel.send("true");
   } else
 	  
