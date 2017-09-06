@@ -4,7 +4,7 @@ const config = require("./config.json");
 const auth = require("./auth.json");
 const prefix = "-";
 const fs = require("fs");
-const reponse = {
+const response = {
 	"shitpost" : "Shitpost. You mean AJ's poetry?",
 	"Desoros" : "Desoros. I like that guy."
 };
@@ -35,8 +35,8 @@ client.on("message", (message) => {
   /* if (isShitpost(message) == true) {
   	message.channel.send("true");
   } else */
-  if (reponse[message.content]) {
-  	message.channel.send(reponse[message.content]);
+  if (response[message.content]) {
+  	message.channel.send(response[message.content]);
   }
 });
 
