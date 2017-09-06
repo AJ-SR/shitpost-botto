@@ -22,19 +22,25 @@ function isShitpost(message) {
 		}
 	}
 }
+client.on("message", (message) => {
+if (!message.content.startsWith(config.prefix) || message.author.bot) return;
+	
+if (message.content.startsWith(config.prefix + "ping")) {
+    	message.channel.send("pong!");
+  } else
+if (message.content.startsWith(config.prefix + "foo")) {
+	message.channel.send("bar!");
+  }
+}
+
 
 client.on("message", (message) => {
   if (message.author.bot) return;
-
-  if (message.content.startsWith(config.prefix + "ping")) {
-    message.channel.send("pong!");
-  } else
-  if (message.content.startsWith(config.prefix + "foo")) {
-    message.channel.send("bar!");
-  } else
-  /* if (isShitpost(message) == true) {
+	
+  if (isShitpost(message) == true) {
   	message.channel.send("true");
-  } else */
+  } else
+	  
   if (response[message.content]) {
   	message.channel.send(response[message.content]);
   }
