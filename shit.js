@@ -14,10 +14,8 @@ client.on("ready", () => {
   client.user.setGame("shitposts");
 });
 
-function isShitpost(message) {
-  for (i = 0; i < config.keywords.length; i++) {
-    if (message.content.includes(config.keywords[i])) {
-     console.log("true");
+if( config.keywords.some(word => message.content.includes(word)) ) {
+  message.reply(response.shitpost);
 		}
 	}
 }
