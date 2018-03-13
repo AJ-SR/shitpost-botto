@@ -7,14 +7,14 @@ const fs = require("fs");
 const args = message.content.slice(prefix.length).trim().split(/ +/g);
 const command = args.shift().toLowerCase();
 const response = require("./response.json");
-
+const keywords = ["shitpost", "AJ-SR", "discord"];
 
 client.on("ready", () => {
   console.log("I am ready!");
   client.user.setGame("shitposts");
 });
 
-if( config.keywords.some(word => message.content.includes(word)) ) {
+if(keywords.some(word => message.content.includes(word))) {
   message.reply(response.shitpost);
 		}
 	}
